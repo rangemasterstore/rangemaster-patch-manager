@@ -20,6 +20,9 @@ const server = http.createServer((req, res) => {
   res.end(`
     <html lang="sv">
       <head>
+<meta name="shopify-api-key" content="${process.env.SHOPIFY_API_KEY}">
+<script src="https://cdn.shopify.com/shopifycloud/app-bridge.js"></script>
+
         <meta charset="UTF-8">
         <title>RangeMaster Patch Manager</title>
       </head>
