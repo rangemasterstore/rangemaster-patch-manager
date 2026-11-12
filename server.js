@@ -34,7 +34,6 @@ const server = http.createServer((req, res) => {
     </html>
   `);
 });
-
 server.listen(PORT, "0.0.0.0", () => {
   console.log("Servern startad på port " + PORT);
 });
