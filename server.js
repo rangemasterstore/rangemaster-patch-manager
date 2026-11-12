@@ -3,15 +3,16 @@ const http = require("node:http");
 
 const PORT = process.env.PORT || 3000;
 
-  if (req.url === "/health" && req.method === "GET") {
+ 
+
+const server = http.createServer((req, res) => {
+   if (req.url === "/health" && req.method === "GET") {
     res.writeHead(200, {
       "Content-Type": "application/json"
     });
     res.end(JSON.stringify({ status: "ok" }));
     return;
   }
-
-const server = http.createServer((req, res) => {
   res.writeHead(200, {
     "Content-Type": "text/html; charset=utf-8"
   });
