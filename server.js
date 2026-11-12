@@ -1,16 +1,28 @@
 
-{
-  "name": "rangemaster-patch-manager",
-  "version": "1.0.0",
-  "private": true,
-  "description": "Shopify app for RangeMaster Store",
-  "scripts": {
-    "start": "node server.js"
-  },
-  "dependencies": {
-    "@shopify/shopify-api": "^12.0.0"
-  },
-  "engines": {
-    "node": ">=20"
-  }
-}
+const http = require("node:http");
+
+const PORT = process.env.PORT || 3000;
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, {
+    "Content-Type": "text/html; charset=utf-8"
+  });
+
+  res.end(`
+    <html lang="sv">
+      <head>
+        <meta charset="UTF-8">
+        <title>RangeMaster Patch Manager</title>
+      </head>
+      <body style="font-family:Arial;padding:40px">
+        <h1>RangeMaster Patch Manager</h1>
+        <h2>Servern fungerar!</h2>
+        <p>Shopify-integrationen byggs nu.</p>
+      </body>
+    </html>
+  `);
+});
+
+server.listen(PORT, "0.0.0.0", () => {
+  console.log("Servern startad på port " + PORT);
+});
